@@ -1,5 +1,6 @@
+/* Default Styling for Page */
 * {
-    /* border: .5px solid var(--light-blue); */
+    border: .5px solid var(--light-blue);
     margin: 0;
     padding: 0;
     color: var(--dark-grey);
@@ -7,243 +8,255 @@
     font-family: Lato, Helvetica, sans-serif;
 }
 
-/* Setting Design for Subheadings */
-h2 {
-    font-size: 45px;
-    padding: 20px 0 20px 0;
-    text-align: center;
-}
 
 /* Setting Design Pattern Colors */
 :root {
-    --main-geen: #127218;
+    --main-green: #127218;
     --light-green:#7EB281;
     --light-blue: #A0EADE;
     --light-grey: #5C6784;
     --dark-grey: #1D263B;
 }
 
-nav {
-    background: var(--main-geen);
-    height: 55px;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-    margin-top: 0;
+body {
+    height: 200vh;
 }
 
-nav img {
+
+/* Header Styling */
+.covid {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: white;
+    align-items: center;
+    z-index: 1;
+    height: 40px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
+    transition: all 2s ease;
+}
+
+.covid p {
+    font-size: 1em;
+    letter-spacing: .1em;
+    color: rgb(235, 149, 21);
+}
+
+#covidBig {
+    display: block;
+}
+
+#covidSma {
+    display: none;
+}
+
+
+/* Navigation Bar */
+.nav-bar {
+    height: 80px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    width: 100%;
+    transition: opacity .7s ease;
+    opacity: 1;
+}
+
+.hide {
+    opacity: 0;
+}
+
+#spruce-logo {
     height: 30px;
     margin-left: 20px;
 }
 
-nav li{
-    color: white;
+.right-nav-bar {
+    list-style: none;
+    display: flex;
+    float: right;
 }
 
-/* Landing Page Welcome Screen */
+.right-nav-bar li {
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar-link {
+    text-decoration: none;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    position: relative;
+}
+.nav-bar-link:hover {
+    color: var(--main-green);
+}
+
+.nav-bar-link:after {
+    content: '';
+    position: absolute;
+    width: 0; height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: var(--main-green);
+    transition: width 1s ease;
+    -webkit-transition: width 1s ease;
+}
+
+.nav-bar-link:hover:after {
+    width: 100%;
+    left: 0;
+    background: var(--main-green);
+}
+.nav-bar-button {
+    letter-spacing: .1em;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 16px;
+    border: 1px solid var(--main-green);
+    background-color: var(--main-green);
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 6px 21px;
+    outline: none;
+    transition: color 1s ease;
+    transition: background-color .5s ease;
+}
+
+.nav-bar-button:active {
+    outline: none;
+}
+
+.nav-bar-button:hover {
+    outline: none;
+    background-color: white;
+    border-color: var(--dark-grey);
+    color: var(--dark-grey);
+}
+
+
+/* Body Styling */
+
+
+/* Welcome Screen Area */
 .welcome-screen {
+    height: 650px;
     display: grid;
-    /* display: none; */
-    padding: 8em 15vw;
-    grid-template-columns: 1.5fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "welcome-screen-words welcome-screen-pic";
-    height: 670px;
+    padding: 130px 200px;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-areas: 'welcome-img welcome-wrd';
+}
+
+.welcome-screen-pic-outer {
+    grid-area: welcome-img;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .welcome-screen-words {
-    grid-area: welcome-screen-words;
+    grid-area: welcome-wrd;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.welcome-screen-words h1 {
-    font-size: 60px;
-    font-weight: 900;
-    color: var(--main-geen);
-    margin: 10px 0px;
-    position: relative;
-}
-
-.text-circle-1 {
-    background-color: var(--main-geen);
-    position: absolute;
-    height: 22px;
-    width: 22px;
-    border-radius: 50%;
-    content: " ";
-    border: 0;
-    margin-top: 19px;
-    margin-left: -70px;
-    z-index: 2;
-}
-
-.text-circle-2 {
-    background-color: var(--main-geen);
-    position: absolute;
-    height: 22px;
-    width: 22px;
-    border: 0;
-    margin-top: 19px;
-    margin-left: -33px;
-    border-radius: 50%;
-    content: " ";
-    z-index: 3;
-}
+.welcome-screen-pic-outer img {
+    height: 45vh;}
 
 .welcome-screen-words p {
-    font-size: 25px;
-    margin: 10px 0px;
-    padding: 0px;
+    font-size: 20px;
+    margin-top: 20px;
+    line-height: 35px;
+    letter-spacing: .09em;
 }
 
-/* Learn More Button */
-.welcome-button
-{
-    letter-spacing: 1px;
-    text-align: center;
-    font-size: 23px;
-    margin: 20px 0;
-    border-radius: 5px;
-    font-weight: 400;
-    position: relative; 
-    top:0; right:0; bottom:0; left:0;
-    padding: 10px 5px;
-    width: 160px;
-    flex-wrap: nowrap;
-    height:50px;
-    background: var(--main-geen);
-    overflow: hidden;
-    transition: all 0.5s;
+.welcome-screen-words img {
+    align-self: flex-start;
 }
 
-.welcome-button:hover, .welcome-button:active 
-{
-    text-decoration: none;
-    color: var(--dark-grey);
-    border: 1px solid var(--dark-grey);
-    background: #FFF;
-}
 
-.welcome-button span 
-{
-    display: inline-block;
-    position: relative;
-    padding-right: 0;
-    color: white;
-    transition: padding-right 0.5s;
-}
-
-.welcome-button span:after 
-{
-    content: ' ';  
-    position: absolute;
-    top: 0;
-    right: -18px;
-    opacity: 0;
-    width: 10px;
-    height: 10px;
-    margin-top: -6px;
-    background: rgba(0, 0, 0, 0);
-    border: 3px solid #FFF;
-    border-top: none;
-    border-right: none;
-    transition: opacity 0s, top 0s, right 0.5s;
-    transform: rotate(-135deg);
-}
-
-.welcome-button:hover span, .welcome-button:active span 
-{
-    padding-right: 20px;
-    color: var(--light-geen);
-}
-
-.welcome-button:hover span:after, .welcome-button:active span:after 
-{
-    transition: opacity 0.5s, top 0.5s, right 0.5s;
-    opacity: 1;
-    border-color: var(--light-geen);
-    right: 0;
-    top: 50%;
-}
-
-.welcome-screen-pic-outer {
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
-
-.welcome-screen-pic-inner {
-    grid-area: welcome-screen-pic;
-    background: url('/img/front_bottle.png') no-repeat;
-    background-position: center;
-    background-size: contain;
-    -webkit-filter: drop-shadow(10px 10px 10px gray);
-    filter: drop-shadow(10px 10px 10px gray);
-    height: 500px;
-    width: 230px;
-}
-
-/* Ingredients Section */
+/* Ingredient Section */
 .whats-in-it {
-    height: 600px;
+    height: 500px;
 }
 
-.whats-in-it h2{
-    margin: 50px 0 90px 0;
+.section-Header {
+    color: var(--main-green);
+    text-align: center;
+    padding: 20px;
+    font-size: 40px;
+    font-weight: 800;
 }
 
 .tab {
-    overflow: hidden;
     margin: 20px 15vw 0 15vw;
-    background-color: white;
+    overflow: hidden;
 }
 
-/* Style the buttons inside the tab */
-.tab button {
-    background-color: var(--main-geen);
+.tabButton {
+    background-color: var(--main-green);
+    letter-spacing: .2em;
+    text-transform: uppercase;
     color: white;
     float: left;
-    border: none;
     outline: none;
     cursor: pointer;
-    width: 12.5%;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 20px;
-}
-  
-/* Change background color of buttons on hover */
-.tab button:hover {
-    background-color: var(--light-green);
-    color: var(--dark-grey);
+    width: 25%;
+    padding: 14px;
+    transition: 0.5s;
+    font-size: 16px;
+    border: 0;
+    box-shadow:  inset 0 -7px 9px -7px var(--dark-grey);
 }
 
-/* Create an active/current tablink class */
-.tab button.active {
-    background-color: white;
+.tabButton:hover {
+    background-color: #12721885;
     color: var(--dark-grey);
+    border: 0;
+}
+
+.tabButton.active {
+    background-color: white;
+    color: var(--main-green);
+    font-weight: 600;
+    border: 0;
     box-shadow: 1px 1px var(--dark-grey) inset, -1px 1px var(--dark-grey) inset;
 }
 
-/* Style the tab content */
 .tabcontent {
     display: none;
     box-shadow: 1px -1px var(--dark-grey) inset, -1px -1px var(--dark-grey) inset;
-    margin: 0 15vw;
+    margin: 0px 15vw 20px 15vw;
+    border: 0;
+    padding: 40px calc(5vw + 20px);
     height: 300px;
-    padding: 40px 120px;
     grid-template-columns: 1.5fr 1fr;
-    grid-template-areas: 'contentWord contentIMg';
+    grid-template-areas: 'tabcontent-word tabcontent-img';
+}
+
+.tabcontent.active{
+    display: grid;
 }
 
 .tabcontent-word {
     display: flex;
+    grid-area: tabcontent-word;
     flex-direction: column;
     justify-content: center;
+}
+
+.tabcontent-word h3 {
+    text-transform: uppercase;
+    letter-spacing: .1em;
 }
 
 .tabcontent-word p {
@@ -251,78 +264,52 @@ nav li{
     line-height: 30px;
 }
 
-
-div[class$=-tabImg] {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+.tabcontent-img {
+    display: flex;
+    grid-area: tabcontent-img;
+    justify-content: center;
 }
 
-.kiwi-tabImg {
-    background-image: url('/img/icons/kiwi_d.png');
+.tabcontent-img img {
+    height: 200px;
 }
 
-.apple-tabImg {
-    background-image: url('/img/icons/apple_d.png');
-}
 
-.miso-tabImg {
-    background-image: url('/img/icons/miso_d.png');
-}
-
-.onion-tabImg {
-    background-image: url('/img/icons/onion_d.png');
-}
-
-.jalapeno-tabImg {
-    background-image: url('/img/icons/jalapeno_d.png');
-}
-
-.ginger-tabImg {
-    background-image: url('/img/icons/ginger_d.png');
-}
-
-.turmeric-tabImg {
-    background-image: url('/img/icons/turmeric_d.png');
-}
-
-.cumin-tabImg {
-    background-image: url('/img/icons/cumin_d.png');
-}
-
-/* Testimonials Section */
+/* Reviews Section */
 .testimonials {
-    height: 600px;
+    margin-top: 30px;
+    height: 500px;
+}
+
+.reviewCards {
+    display: flex;
+    margin: 0px 15vw 20px 15vw;
+}
+
+.reviewCard {
+    box-shadow: 2px 2px 2px var(--dark-grey);
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
 }
 
-.reviewSlides {
-    position: relative;
-    overflow: hidden;
-    height: 450px;
+.reviewCard * {
+    color: var(--dark-grey);
 }
 
-.reviews {
-    background: url('/img/reviews.png');
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 500%;
-    animation: reviewSlides 190s linear infinite;
+.reviewCard img{
+    height: 60px;
 }
 
-@keyframes reviewSlides {
-    100% { 
-        -webkit-transform: translateX(-200%);  
-      }
+/* About Section */
+.about {
+    height: 40vh;
+    background-color: gray;
 }
 
-.section-Header {
-    opacity: 1;
-}
 
+/* Back to Top Button */
 .topButton {
     display: none;
     position: fixed;
@@ -343,21 +330,19 @@ div[class$=-tabImg] {
 
 .topButtonActive {
     display: block;
-    opacity: .5;
+    opacity: .8;
     position: fixed;
-    bottom: 70px;
+    bottom: 25px;
     color: white;
     right: 40px;
     z-index: 5;
-    border-radius: 5px;
-    font-weight: 400;
-    letter-spacing: 1px;
+    border-radius: 50px;
     text-align: center;
-    font-size: 18px;
-    width: 130px;
+    font-size: 30px;
+    width: 50px;
     border: 0px;
-    height: 40px;
-    background: var(--main-geen);
+    height: 50px;
+    background: var(--dark-grey);
 }
 
 .topButtonActive:hover {
@@ -373,17 +358,58 @@ div[class$=-tabImg] {
     outline: none;
 }
 
+
 /* Footer Section */
 footer {
-    height: 60px;
-    background-color: var(--main-geen);
+    background-color: var(--dark-grey);
+    height: 100px;
     display: flex;
     align-items: center;
 }
 
 footer h6 {
-    color: white;
-    opacity: .6;
     margin-left: 20px;
+    font-weight: 300;
+    letter-spacing: .05em;
+    color: rgba(255, 255, 255, 0.521);
 }
 
+
+/* Change Covid Pricing Text on Smaller Screens */
+@media screen and (max-width: 750px) {
+    #covidBig {
+        display: none;
+    }
+    
+    #covidSma {
+        display: block;
+    }
+
+    .right-nav-bar {
+        display: none;
+    }
+
+    .nav-bar {
+        justify-content: center;
+        height: 40px;
+    }
+
+    .nav-bar a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #spruce-logo {
+        margin-left: 0px;
+    }
+
+    .welcome-screen {
+        display: block;
+    }
+
+    .welcome-screen-words {
+        margin-top: 40px;
+        text-align: center;
+    }
+}

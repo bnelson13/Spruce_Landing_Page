@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicons/favicon-16x16.png">
@@ -13,111 +12,103 @@
 </head>
 <body>
     <header>
-        <nav>
-            <img src="img/logo/logo_w.png" alt="Spruce Logo" id="spruce-logo">
+        <div class="covid">
+            <p id="covidBig">Special COVID-19 Pricing - Spruce Sauce is 25% Off!</p>
+            <p id="covidSma">COVID 19 Sale - 25% Off!</p>
+        </div>
+        <nav class="nav-bar">
+            <a href="/index.html">
+                <img src="img/logo/logo_g_small.png" alt="Spruce Logo" id="spruce-logo">
+            </a>
+            <ul class="right-nav-bar">
+                <li><a class="nav-bar-link" href="/index.html">Home</a></li>
+                <li><a class="nav-bar-link" href="/index.html">Reviews</a></li>
+                <li><a class="nav-bar-link" href="/index.html">Ingredients</a></li>
+                <li><button class="nav-bar-button">Shop</button></li>
+            </ul>
         </nav>
     </header>
 
     <div class="welcome-screen">
-        <div class="welcome-screen-words">
-            <h1>SPR<span class="text-circle-1"></span><span class="text-circle-2"></span>UCE SAUCE</h1>
-            <p>Our sauce has been carefully crated to add a perfect balance of flavor to any dish. It is a new kind of sauce!</p>
-            <a href="#" class="welcome-button"><span>Shop Now</span></a>
+        <div class="welcome-screen-pic-outer">
+            <img src="img/bottles/front_bottle.png">
         </div>
-        <div class="welcome-screen-pic-outer"><div class="welcome-screen-pic-inner"></div></div>
+        <div class="welcome-screen-words">
+            <img src="img/logo/full_logo_g.png">
+            <p>Our sauce has been carefully crated to add a perfect balance of flavor to any dish. It makes everything taste better from breakfast to lunch to dinner. Pefected over hundreds of recipes, Spruce Sauce stands as a new definition of sauce.</p>
+        </div>
     </div>
 
     <div class="whats-in-it">
         <h2 class="section-Header">What's In It?</h1>
         <div class="tab">
-            <button class="tablinks" onclick="openTab(event, 'Kiwi')">Kiwi</button>
-            <button class="tablinks" onclick="openTab(event, 'Apple')">Apple</button>
-            <button class="tablinks" onclick="openTab(event, 'Miso')">Miso</button>
-            <button class="tablinks" onclick="openTab(event, 'Onion')">Onion</button>
-            <button class="tablinks" onclick="openTab(event, 'Jalapeno')">Jalapeno</button>
-            <button class="tablinks" onclick="openTab(event, 'Ginger')">Ginger</button>
-            <button class="tablinks" onclick="openTab(event, 'Turmeric')">Turmeric</button>
-            <button class="tablinks" onclick="openTab(event, 'Cumin')">Cumin</button>
+            <button class="tabButton active">savory</button>
+            <button class="tabButton">spicy</button>
+            <button class="tabButton">sweet</button>
+            <button class="tabButton">season</button>
         </div>
             
-        <div id="Kiwi" class="tabcontent">
+        <div class="tabcontent active" id="savory">
             <div class="tabcontent-word">
-                <h3>Kiwi</h3>
+                <h3>savory</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid soluta pariatur nihil reprehenderit nostrum asperiores molestias adipisci ex, ratione dolores debitis iure animi magnam mollitia, fugit quo ab architecto laborum.</p>
             </div>
-            <div class="kiwi-tabImg"></div>
+            <div class="tabcontent-img"><img src="img/icons/savory.png" alt="Savory Ingredient Icons"></div>
         </div>
-            
-        <div id="Apple" class="tabcontent">
+        <div class="tabcontent" id='spicy'>
             <div class="tabcontent-word">
-                <h3>Apple</h3>
+                <h3>spicy</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid soluta pariatur nihil reprehenderit nostrum asperiores molestias adipisci ex, ratione dolores debitis iure animi magnam mollitia, fugit quo ab architecto laborum.</p> 
             </div>
-            <div class="apple-tabImg"></div>
+            <div class="tabcontent-img"><img src="img/icons/spicy.png" alt="Spicy Ingredient Icons"></div>
         </div>
-            
-        <div id="Miso" class="tabcontent">
+        <div class="tabcontent" id='sweet'>
             <div class="tabcontent-word">
-                <h3>Miso</h3>
+                <h3>sweet</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid soluta pariatur nihil reprehenderit nostrum asperiores molestias adipisci ex, ratione dolores debitis iure animi magnam mollitia, fugit quo ab architecto laborum.</p>
             </div>
-            <div class="miso-tabImg"></div>
+            <div class="tabcontent-img"><img src="img/icons/sweet.png" alt="Savory Ingredient Icons"></div>
         </div>
-
-        <div id="Onion" class="tabcontent">
+        <div class="tabcontent" id='season'>
             <div class="tabcontent-word">
-                <h3>Onion</h3>
+                <h3>season</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid soluta pariatur nihil reprehenderit nostrum asperiores molestias adipisci ex, ratione dolores debitis iure animi magnam mollitia, fugit quo ab architecto laborum.</p>
             </div>
-            <div class="onion-tabImg"></div>
-        </div>
-            
-        <div id="Jalapeno" class="tabcontent">
-            <div class="tabcontent-word">
-                <h3>Jalapeno</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid soluta pariatur nihil reprehenderit nostrum asperiores molestias adipisci ex, ratione dolores debitis iure animi magnam mollitia, fugit quo ab architecto laborum.</p> 
-            </div>
-            <div class="jalapeno-tabImg"></div>
-        </div>
-            
-        <div id="Ginger" class="tabcontent">
-            <div class="tabcontent-word">
-                <h3>Ginger</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid soluta pariatur nihil reprehenderit nostrum asperiores molestias adipisci ex, ratione dolores debitis iure animi magnam mollitia, fugit quo ab architecto laborum.</p>
-            </div>
-            <div class="ginger-tabImg"></div>
-        </div>
-
-        <div id="Turmeric" class="tabcontent">
-            <div class="tabcontent-word">
-                <h3>Turmeric</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid soluta pariatur nihil reprehenderit nostrum asperiores molestias adipisci ex, ratione dolores debitis iure animi magnam mollitia, fugit quo ab architecto laborum.</p> 
-            </div>
-            <div class="turmeric-tabImg"></div>
-        </div>
-            
-        <div id="Cumin" class="tabcontent">
-            <div class="tabcontent-word">
-                <h3>Cumin</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid soluta pariatur nihil reprehenderit nostrum asperiores molestias adipisci ex, ratione dolores debitis iure animi magnam mollitia, fugit quo ab architecto laborum.</p>
-            </div>
-            <div class="cumin-tabImg"></div>
+            <div class="tabcontent-img"><img src="img/icons/season.png" alt="Savory Ingredient Icons"></div>
         </div>
     </div>
 
     <div class="testimonials">
         <h2 class="section-Header">Testimonials</h1>
-        <div class="reviewSlides">
-            <div class="reviews">
-                
+        <div class="reviewCards">
+            <div class="reviewCard">
+                <img src="img/icons/quote.png">
+                <h4>Amazing!</h4>
+                <p>This is the best sauce I have ever had, omg.</p>
+            </div>
+            <div class="reviewCard">
+                <img src="img/icons/quote.png">
+                <h4>Amazing!</h4>
+                <p>This is the best sauce I have ever had, omg.</p>
+            </div>
+            <div class="reviewCard">
+                <img src="img/icons/quote.png">
+                <h4>Amazing!</h4>
+                <p>This is the best sauce I have ever had, omg.</p>
             </div>
         </div>
     </div>
 
-    <button class="topButton">Back to Top</button>
+    <div class="about">
+        <h2 class="section-Header">About</h1>
+    </div>
+
+    <button class="topButton">&#9650</button>
+
     <footer>
         <h6>Spruce Sauce, LLC © 2020</h6>
     </footer>
+
     <script src="/js/app.js"></script>
 </body>
 </html>

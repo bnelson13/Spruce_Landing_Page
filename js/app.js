@@ -1,24 +1,59 @@
+/* Alert for Special Covid Pricing */
+const covid = document.querySelector('.covid');
 
-function openTab(evt, ingred) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(ingred).style.display = "grid";
-    evt.currentTarget.className += " active";
+// Moves bar up 50px and out of view
+function hideCovidBar() {
+    covid.style.transform = 'translateY(-50px)';
 }
 
-const defaultClick = document.querySelector('.tablinks');
-defaultClick.click();
+//Sets timer for when bar disappears
+window.setTimeout('hideCovidBar();', 3000);
 
 
+/* Have Navigation Bar reappear when scrolling up */
+const navBar = document.querySelector('.nav-bar');
+
+function navBarUpScroll() {
+    window.onscroll = function(e) {
+        if (window.scrollY > 90) {
+        if (this.oldScroll > this.scrollY) {
+            navBar.style.opacity = 1;
+            navBar.style.zIndex = 0;
+        } else {
+            navBar.style.opacity = 0;
+            navBar.style.zIndex = -2;
+        }
+        this.oldScroll = this.scrollY;
+    }
+    }
+}
+navBarUpScroll();
+
+
+/* Ingredient Navigation Menu */
+tabButtons = document.querySelectorAll('.tab button');
+tabContents = document.querySelectorAll('.tabcontent');
+
+tabButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        tabButtons.forEach((item) => {
+            item.className = 'tabButton';
+        })
+        e.target.className = 'tabButton active';
+        tabContents.forEach((itemB) => {
+            itemB.className = 'tabcontent';
+        })
+        selectedButton = e.target.innerHTML;
+        selectedContent = document.querySelector(`#${selectedButton}`);
+        selectedContent.className += ' active';
+    })
+})
+
+
+/* Button to go Back to Top of page */
 topButton = document.querySelector('.topButton');
 
+// If page is scrolled down 20 then button will appear
 const showButton = function() {
     let y = window.scrollY;
     if (y>20) {
@@ -30,6 +65,7 @@ const showButton = function() {
 
 window.addEventListener('scroll', showButton);
 
+// Scroll back to top slowly when button is pressed
 topButton.addEventListener('click', function (e) {
     e.preventDefault();
     const scrollUp = function () {
