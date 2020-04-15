@@ -78,3 +78,22 @@ topButton.addEventListener('click', function (e) {
     scrollUp();
 })
 
+// Subscription Box
+overlay = document.querySelector('#overlayId');
+subscribeBox1 = document.querySelector('.subscription1');
+subscribeBox = document.querySelector('.subscription');
+closeSubscribe = document.querySelector('.subExit');
+
+const popUpSubscribe = function () {
+    overlay.setAttribute('class', 'overlay');
+    subscribeBox1.setAttribute('class', 'subscription');
+} 
+
+closeSubscribe.addEventListener('click', function () {
+    overlay.setAttribute('class', '');
+    subscribeBox1.style.display = 'none';
+})
+
+if (screen.width > 570) {
+window.setTimeout('popUpSubscribe();', 4000);
+}
